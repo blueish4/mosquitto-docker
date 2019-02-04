@@ -1,0 +1,13 @@
+version: '3'
+services:
+    mosquitto:
+        build: ./mosquitto
+        volumes:
+          - data:/mosquitto/data
+          - logs:/mosquitto/log
+        ports: 
+          - "1883:1883/tcp"
+
+volumes:
+    data:
+    logs:
