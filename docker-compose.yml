@@ -2,12 +2,20 @@ version: '3'
 services:
     mosquitto:
         build: ./mosquitto
+        restart: always
         volumes:
           - data:/mosquitto/data
           - logs:/mosquitto/log
         ports: 
-          - "1883:1883/tcp"
+          - "21:1883"
+        networks:
+            default:
 
+networks:
+    default:
+        driver: bridge
+        driver_opts: 
+            com.docker.network.enable_ipv6: "true"
 volumes:
     data:
     logs:
