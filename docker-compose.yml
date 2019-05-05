@@ -7,7 +7,7 @@ services:
           - data:/mosquitto/data
           - logs:/mosquitto/log
         ports: 
-          - "21:1883"
+          - "1883:1883"
         networks:
             default:
 
